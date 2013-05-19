@@ -9,14 +9,14 @@
 
 class SkinLaravel extends SkinTemplate {
 
-	public $skinname = 'laravel', $stylename = 'laravel',
+	public $skinname = 'laravel-io-wiki-skin', $stylename = 'laravel-io-wiki-skin',
 		$template = 'LaravelTemplate', $useHeadElement = true;
 
 	public function setupSkinUserCss(OutputPage $out)
 	{
 		parent::setupSkinUserCss($out);
 
-		$out->addModuleStyles('skins.laravel');
+		$out->addModuleStyles('skins.laravel-io-wiki-skin');
 	}
 
 }

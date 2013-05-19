@@ -22,16 +22,16 @@ $wgExtensionCredits['skin'][] = array(
     'descriptionmsg' => 'laravel-desc',
 );
 
-$wgValidSkinNames['laravel'] = 'Laravel';
+$wgValidSkinNames['laravel-io-wiki-skin'] = 'Laravel';
 $wgAutoloadClasses['SkinLaravel'] = __DIR__.'/Laravel.skin.php';
 $wgExtensionMessagesFiles['Laravel'] = __DIR__.'/Laravel.i18n.php';
  
-$wgResourceModules['skins.laravel'] = array(
+$wgResourceModules['skins.laravel-io-wiki-skin'] = array(
 	'styles' => array(
-    	'laravel/assets/stylesheets/webfonts.css' => array('media' => 'screen'),
-    	'laravel/assets/stylesheets/font-awesome.css' => array('media' => 'screen'),
-    	'laravel/assets/stylesheets/normalize.css' => array('media' => 'screen'),
-    	'laravel/assets/stylesheets/main.css' => array('media' => 'screen')
+    	'laravel-io-wiki-skin/assets/stylesheets/webfonts.css' => array('media' => 'screen'),
+    	'laravel-io-wiki-skin/assets/stylesheets/font-awesome.css' => array('media' => 'screen'),
+    	'laravel-io-wiki-skin/assets/stylesheets/normalize.css' => array('media' => 'screen'),
+    	'laravel-io-wiki-skin/assets/stylesheets/main.css' => array('media' => 'screen')
     ),
     'remoteBasePath' => &$GLOBALS['wgStylePath'],
     'localBasePath' => &$GLOBALS['wgStyleDirectory']
