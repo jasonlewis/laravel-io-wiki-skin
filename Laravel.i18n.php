@@ -14,5 +14,5 @@ $messages = array();
  */
 $messages['en'] = array(
 	'skinname-laravel' => 'Laravel',
-	'laravel-desc' => 'The default theme for the Laravel.io community wiki.'
+	'laravel-desc' => 'The default skin for the Laravel.io community wiki.'
 );
