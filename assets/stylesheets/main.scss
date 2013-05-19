@@ -1,0 +1,606 @@
+@mixin border-radius($tl, $tr, $br, $bl) {
+	border-radius: $tl $tr $br $bl;
+	-moz-border-radius: $tl $tr $br $bl;
+	-webkit-border-radius: $tl $tr $br $bl;
+}
+
+@mixin horizontal-gray-list {
+	
+	& > li {
+		float: left;
+		position: relative;
+		margin: 0 0 0 5px;
+
+		& > a, span {
+			@include border-radius(2px, 2px, 2px, 2px);
+			background-color: #f7f7f7;
+			display: block;
+			font-size: 0.8em;
+			padding: 3px 5px;
+			color: #777;
+
+			&:hover, &:focus {
+				text-decoration: none;
+				background-color: #f1f1f1;
+			}
+		}
+
+		&.selected > a {
+			color: #aaa;
+			background-color: #f1f1f1;
+			font-weight: bold;
+
+			&:hover { text-decoration: none; }
+		}
+	}
+}
+
+.group:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+/**
+ * Some default styles and fonts.
+ */
+body {
+	margin: 0;
+	background-color: #fff;
+	font-size: 12pt;
+	color: #333;
+	font-family: "Helvetica", Arial, sans-serif;
+	line-height: 1.5em;
+}
+
+a {
+	color: #F0523F;
+	text-decoration: none;
+	position: relative;
+
+	&:hover {
+		text-decoration: underline;
+	}
+
+	/**
+	 * For pages that have not been created. Make them stand out from normal links.
+	 */
+	&.new {
+		color: #BA0000;
+	}
+
+	&.external {
+		padding: 0 19px 0 0 !important;
+	}
+
+	&.external:after {
+		position: absolute;
+		font-family: 'FontAwesome';
+		content: "\f08e";
+		font-style: normal;
+		font-size: 11px;
+		padding: 1px 2px 0 6px;
+		color: #999;
+		font-weight: normal;
+	}
+}
+
+/**
+ * The default 960px wrapper for elements.
+ */
+.contain {
+	width: 960px;
+	margin: 0 auto;
+}
+
+/**
+ * Top navigation is the bar that runs across the top of the page. This navigation links
+ * back to other community websites for Laravel.
+ */
+div.top-navigation {
+	background-color: #4c4c4c;
+	height: 39px;
+	width: 100%;
+	overflow: hidden;
+
+	ul {
+		float: left;
+		padding: 6px 0;
+		margin: 0;
+		list-style: none;
+
+		li {
+			float: left;
+			margin: 0 5px 0 0;
+
+			a {
+				display: block;
+				font-family: "Share";
+				font-size: 1em;
+				color: #fff;
+				padding: 2px 5px;
+				@include border-radius(2px, 2px, 2px, 2px);
+
+				&:hover {
+					background-color: #f0523f;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+
+	/**
+	 * The search box is in the top right hand corner of the page.
+	 */
+	.search-box {
+		float: right;
+
+		input[name="search"] {
+			background-color: #444;
+			border: 0;
+			font-size: 1em;
+			color: #fff;
+			height: 39px;
+			padding: 0 0 0 8px;
+			min-width: 240px;
+			box-shadow: none;
+			margin: 0;
+
+			&:focus + button[type="submit"] {
+				color: #fff;
+			}
+		}
+
+		input[name="search"]::-webkit-input-placeholder { color: #b0b0b0; }
+		input[name="search"]::-moz-placeholder { color: #b0b0b0; }
+		input[name="search"]:-ms-input-placeholder { color: #b0b0b0; }
+		input[name="search"]:-moz-placeholder { color: #b0b0b0; }
+
+		button[type="submit"] {
+			border: 0;
+			background-color: #444;
+			height: 39px;
+			padding: 0;
+			width: 24px;
+			color: #b0b0b0;
+			font-size: 0.9em;
+			margin: 0;
+			box-shadow: none;
+
+			i {
+				position: relative;
+				top: -1px;
+			}
+
+			&:hover {
+				color: #fff;
+			}
+		}
+	}
+}
+
+header {
+	width: 100%;
+	background-color: #F0523F;
+	position: relative;
+
+	img {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin: -108px 0 0 -94px;
+	}
+
+	/**
+	 * This is the main navigation for the wiki. Some items of the navigation can contain
+	 * more menus that drop down when hovered.
+	 */
+	nav {
+		width: 100%;
+		height: 216px;
+		position: relative;
+
+		& > ul {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			padding: 0;
+			margin: 0;
+
+			& > li {
+				float: left;
+				margin: 0 0 0 0;
+				background-color: #f55a47;
+				position: relative;
+
+				a, span {
+					display: block;
+					color: #fff !important;
+					font-family: "Share";
+					font-size: 1.1em;
+					padding: 6px 14px;
+					cursor: pointer;
+
+					&:hover {
+						color: #fff;
+						text-decoration: none;
+					}
+
+					i {
+						font-size: 0.8em;
+						margin: 0 0 0 6px;
+						position: relative;
+						top: -1px;
+					}
+				}
+
+				&:first-child {
+					@include border-radius(2px, 0, 0, 0);
+				}
+
+				&:last-child {
+					@include border-radius(0, 2px, 0, 0);
+				}
+
+				&.highlighted { font-weight: bold; }
+
+				&:hover {
+					background-color: #eb4a36;
+
+					&.menu {
+						ul {
+							display: block;
+						}
+					}
+				}
+
+				/**
+				 * Navigation items that have the menu class will have their menu shown on hover.
+				 */
+				&.menu {
+					ul {
+						margin: 0;
+						padding: 0;
+						display: none;
+						position: absolute;
+						top: 100%;
+						min-width: 300px;
+						z-index: 2;
+
+						li {
+							font-size: 0.9em;
+							float: none;
+							background-color: #eb4a36;
+
+							&:hover {
+								background-color: #f55a47;
+							}
+
+							&:first-child {
+								height: 4px;
+
+								&:hover { background-color: #eb4a36; }
+							}
+
+							&:last-child {
+								@include border-radius(0, 0, 2px, 2px);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+section.page {
+	padding: 16px 0 48px;
+
+	/**
+	 * The page header contains links for editing, discussing, and other administration tools.
+	 */
+	div.page-header {
+
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			float: right;
+
+			@include horizontal-gray-list;
+
+			li {
+
+				/**
+				 * Page actions are a drop down menu for things like deleting or moving a page.
+				 */
+				&.actions {
+					&:hover > ul { display: block; }
+
+					&:hover:after {
+						content: "";
+						position: absolute;
+						top: 100%;
+						right: 0;
+						height: 4px;
+						background-color: #f7f7f7;
+						display: block;
+						width: 100%;
+					}
+
+					ul {
+						display: none;
+						position: absolute;
+						top: 100%;
+						padding: 4px 0 0;
+						right: 0;
+						text-align: right;
+						z-index: 1;
+
+						li {
+							float: none;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	div.page-left {
+		float: left;
+		width: 220px;
+		margin: 18px 30px 0 0;
+
+		& + .page-main {
+			width: 700px;
+			margin: 0 0 0 250px;
+		}
+
+		/**
+		 * Table of contents for pages. This is generated by media wiki so has lame
+		 * identifiers and class names.
+		 */
+		table#toc {
+
+			div#toctitle {
+				padding: 4px;
+
+				h2 {
+					display: inline;
+					font-weight: normal;
+					font-size: 1.2em;
+					border: 0;
+				}
+
+				span.toctoggle { display: none; }
+
+				& + ul {
+					padding: 0;
+				}
+			}
+
+			ul {
+				list-style: none;
+				margin: 4px;
+				font-size: 0.95em;
+				padding: 0 0 0 16px;
+			}
+		}
+	}
+
+	div.page-main {
+		width: 960px;
+		font-size: 0.95em;
+
+		/**
+		 * Headings are what separate each section. Much like a standard wiki we'll have the main
+		 * and sub-headings have an underline, each other heading will just be larger text.
+		 */
+		h1, h2, h3, h4, h5, h6 {
+			position: relative;
+			border-bottom: 1px solid #ddd;
+			font-weight: normal;
+			font-size: 2em;
+			padding: 0 0 12px;
+			margin: 18px 0;
+
+			/**
+			 * Editing a section on the wiki.
+			 */
+			& > span.editsection {
+				position: absolute;
+				bottom: 5px;
+				right: 0;
+				font-size: 12px;
+			}
+		}
+
+		h2 { font-size: 1.7em; }
+		h3 { font-size: 1.5em; }
+		h4 { font-size: 1.3em; }
+		h5 { font-size: 1.1em; }
+		h6 { font-size: 1em; }
+
+		h3, h4, h5, h6 {
+			border: 0;
+			padding: 0;
+		}
+
+		/**
+		 * Main body paragraphs.
+		 */
+		p {
+			margin: 18px 0;
+		}
+
+		/**
+		 * Main body lists.
+		 */
+		& > #mw-content-text > ul, & > #mw-content-text > ol {
+			line-height: 0.8em;
+			padding: 0 0 0 30px;
+			margin: 16px 0;
+
+			li {
+				margin: 3px 0;
+			}
+		}
+
+		/**
+		 * User preferences table of contents.
+		 */
+		#preftoc {
+			list-style: none;
+			float: right;
+			margin: 0 0 18px;
+
+			@include horizontal-gray-list;
+		}
+
+		/**
+		 * Fieldsets are used for things like prefences. This makes them look sexy.
+		 */
+		fieldset {
+			clear: both;
+			@include border-radius(2px, 2px, 2px, 2px);
+			border: 1px solid #ddd;
+			margin: 18px 0;
+
+			& > legend {
+				background-color: #fff;
+				padding: 2px 6px;
+				color: #444;
+			}
+
+			table { width: 100%; }
+		}
+
+		.mw-label {
+			padding: 16px 8px;
+			font-weight: bold;
+			vertical-align: top;
+			width: 160px;
+		}
+
+		.mw-input { padding: 8px; }
+
+		td.htmlform-top { padding: 8px; }
+
+		td.htmlform-tip, .prefsectiontip {
+			font-size: 0.9em;
+			font-style: italic;
+		}
+
+		.prefsectiontip {
+			p {
+				margin: 6px 0 !important;
+			}
+		}
+
+		#editform > textarea {
+			width: 100%;
+			box-sizing: border-box;
+			-moz-box-sizing: border-box;
+		}
+
+		/**
+		 * Remember me text.
+		 */
+		label[for="wpRemember"] {
+			font-size: 0.9em;
+			padding: 0 0 0 6px;
+		}
+
+		/**
+		 * Syntax highlighting
+		 */
+		div.mw-geshi {
+			border: 1px solid #f1f1f1;
+			padding: 6px;
+			font-size: 0.9em;
+			background-color: #f9f9f9;
+		}
+
+
+	}
+}
+
+footer {
+	clear: both;
+	background-color: #4C4C4C;
+	padding: 10px 0;
+	font-size: 0.7em;
+	color: #fff;
+
+	p { margin: 6px 0; }
+}
+
+/**
+ * Input buttons and submit boxes.
+ */
+input, textarea, select, button {
+	@include border-radius(2px, 2px, 2px, 2px);
+	border: 1px solid #ccc;
+	padding: 6px 4px;
+	box-shadow: inset 0 1px 1px #e2e2e2;
+	color: #444;
+	margin: 4px 0;
+}
+
+input[type="submit"] {
+	background: #f36b5b;
+	background: -moz-linear-gradient(top, #f36b5b 0%, #f0523f 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f36b5b), color-stop(100%, #f0523f));
+	background: -webkit-linear-gradient(top, #f36b5b 0%, #f0523f 100%);
+	background: -o-linear-gradient(top, #f36b5b 0%, #f0523f 100%);
+	background: -ms-linear-gradient(top, #f36b5b 0%, #f0523f 100%);
+	background: linear-gradient(to bottom, #f36b5b 0%, #f0523f 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f36b5b', endColorstr='#f0523f', GradientType=0);
+	border-color: #e04b39;
+	color: #fff;
+	box-shadow: inset 0 1px 1px #f57e6f;
+	padding: 6px 12px;
+}
+
+/**
+ * Success, error, and warning boxes.
+ */
+.successbox, .warningbox, .errorbox {
+	width: 100%;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	margin: 18px 0;
+	border-width: 1px;
+	@include border-radius(2px, 2px, 2px, 2px);
+
+	p {
+		margin: 0 !important;
+	}
+}
+
+.successbox {
+	border-color: #D6E9C6;
+	background-color: #DFF0D8;
+	color: #468847;
+}
+
+.warningbox {
+	border-color: #FBEED5;
+	background-color: #FCF8E3;
+	color: #C09853;
+}
+
+.errorbox {
+	border-color: #EED3D7;
+	background-color: #F2DEDE;
+	color: #B94A48;
+}
+
+/**
+ * Horizontal Rule
+ */
+hr {
+	border: 0;
+	background-color: #ddd;
+	height: 2px;
+}

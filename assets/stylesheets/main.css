@@ -1,0 +1,483 @@
+.group:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+/**
+ * Some default styles and fonts.
+ */
+body {
+  margin: 0;
+  background-color: #fff;
+  font-size: 12pt;
+  color: #333;
+  font-family: "Helvetica", Arial, sans-serif;
+  line-height: 1.5em; }
+
+a {
+  color: #F0523F;
+  text-decoration: none;
+  position: relative;
+  /**
+   * For pages that have not been created. Make them stand out from normal links.
+   */ }
+  a:hover {
+    text-decoration: underline; }
+  a.new {
+    color: #BA0000; }
+  a.external {
+    padding: 0 19px 0 0 !important; }
+  a.external:after {
+    position: absolute;
+    font-family: 'FontAwesome';
+    content: "\f08e";
+    font-style: normal;
+    font-size: 11px;
+    padding: 1px 2px 0 6px;
+    color: #999;
+    font-weight: normal; }
+
+/**
+ * The default 960px wrapper for elements.
+ */
+.contain {
+  width: 960px;
+  margin: 0 auto; }
+
+/**
+ * Top navigation is the bar that runs across the top of the page. This navigation links
+ * back to other community websites for Laravel.
+ */
+div.top-navigation {
+  background-color: #4c4c4c;
+  height: 39px;
+  width: 100%;
+  overflow: hidden;
+  /**
+   * The search box is in the top right hand corner of the page.
+   */ }
+  div.top-navigation ul {
+    float: left;
+    padding: 6px 0;
+    margin: 0;
+    list-style: none; }
+    div.top-navigation ul li {
+      float: left;
+      margin: 0 5px 0 0; }
+      div.top-navigation ul li a {
+        display: block;
+        font-family: "Share";
+        font-size: 1em;
+        color: #fff;
+        padding: 2px 5px;
+        border-radius: 2px 2px 2px 2px;
+        -moz-border-radius: 2px 2px 2px 2px;
+        -webkit-border-radius: 2px 2px 2px 2px; }
+        div.top-navigation ul li a:hover {
+          background-color: #f0523f;
+          text-decoration: none; }
+  div.top-navigation .search-box {
+    float: right; }
+    div.top-navigation .search-box input[name="search"] {
+      background-color: #444;
+      border: 0;
+      font-size: 1em;
+      color: #fff;
+      height: 39px;
+      padding: 0 0 0 8px;
+      min-width: 240px;
+      box-shadow: none;
+      margin: 0; }
+      div.top-navigation .search-box input[name="search"]:focus + button[type="submit"] {
+        color: #fff; }
+    div.top-navigation .search-box input[name="search"]::-webkit-input-placeholder {
+      color: #b0b0b0; }
+    div.top-navigation .search-box input[name="search"]::-moz-placeholder {
+      color: #b0b0b0; }
+    div.top-navigation .search-box input[name="search"]:-ms-input-placeholder {
+      color: #b0b0b0; }
+    div.top-navigation .search-box input[name="search"]:-moz-placeholder {
+      color: #b0b0b0; }
+    div.top-navigation .search-box button[type="submit"] {
+      border: 0;
+      background-color: #444;
+      height: 39px;
+      padding: 0;
+      width: 24px;
+      color: #b0b0b0;
+      font-size: 0.9em;
+      margin: 0;
+      box-shadow: none; }
+      div.top-navigation .search-box button[type="submit"] i {
+        position: relative;
+        top: -1px; }
+      div.top-navigation .search-box button[type="submit"]:hover {
+        color: #fff; }
+
+header {
+  width: 100%;
+  background-color: #F0523F;
+  position: relative;
+  /**
+   * This is the main navigation for the wiki. Some items of the navigation can contain
+   * more menus that drop down when hovered.
+   */ }
+  header img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -108px 0 0 -94px; }
+  header nav {
+    width: 100%;
+    height: 216px;
+    position: relative; }
+    header nav > ul {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding: 0;
+      margin: 0; }
+      header nav > ul > li {
+        float: left;
+        margin: 0 0 0 0;
+        background-color: #f55a47;
+        position: relative;
+        /**
+         * Navigation items that have the menu class will have their menu shown on hover.
+         */ }
+        header nav > ul > li a, header nav > ul > li span {
+          display: block;
+          color: #fff !important;
+          font-family: "Share";
+          font-size: 1.1em;
+          padding: 6px 14px;
+          cursor: pointer; }
+          header nav > ul > li a:hover, header nav > ul > li span:hover {
+            color: #fff;
+            text-decoration: none; }
+          header nav > ul > li a i, header nav > ul > li span i {
+            font-size: 0.8em;
+            margin: 0 0 0 6px;
+            position: relative;
+            top: -1px; }
+        header nav > ul > li:first-child {
+          border-radius: 2px 0 0 0;
+          -moz-border-radius: 2px 0 0 0;
+          -webkit-border-radius: 2px 0 0 0; }
+        header nav > ul > li:last-child {
+          border-radius: 0 2px 0 0;
+          -moz-border-radius: 0 2px 0 0;
+          -webkit-border-radius: 0 2px 0 0; }
+        header nav > ul > li.highlighted {
+          font-weight: bold; }
+        header nav > ul > li:hover {
+          background-color: #eb4a36; }
+          header nav > ul > li:hover.menu ul {
+            display: block; }
+        header nav > ul > li.menu ul {
+          margin: 0;
+          padding: 0;
+          display: none;
+          position: absolute;
+          top: 100%;
+          min-width: 300px;
+          z-index: 2; }
+          header nav > ul > li.menu ul li {
+            font-size: 0.9em;
+            float: none;
+            background-color: #eb4a36; }
+            header nav > ul > li.menu ul li:hover {
+              background-color: #f55a47; }
+            header nav > ul > li.menu ul li:first-child {
+              height: 4px; }
+              header nav > ul > li.menu ul li:first-child:hover {
+                background-color: #eb4a36; }
+            header nav > ul > li.menu ul li:last-child {
+              border-radius: 0 0 2px 2px;
+              -moz-border-radius: 0 0 2px 2px;
+              -webkit-border-radius: 0 0 2px 2px; }
+
+section.page {
+  padding: 16px 0 48px;
+  /**
+   * The page header contains links for editing, discussing, and other administration tools.
+   */ }
+  section.page div.page-header ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    float: right; }
+    section.page div.page-header ul > li {
+      float: left;
+      position: relative;
+      margin: 0 0 0 5px; }
+      section.page div.page-header ul > li > a, section.page div.page-header ul > li span {
+        border-radius: 2px 2px 2px 2px;
+        -moz-border-radius: 2px 2px 2px 2px;
+        -webkit-border-radius: 2px 2px 2px 2px;
+        background-color: #f7f7f7;
+        display: block;
+        font-size: 0.8em;
+        padding: 3px 5px;
+        color: #777; }
+        section.page div.page-header ul > li > a:hover, section.page div.page-header ul > li > a:focus, section.page div.page-header ul > li span:hover, section.page div.page-header ul > li span:focus {
+          text-decoration: none;
+          background-color: #f1f1f1; }
+      section.page div.page-header ul > li.selected > a {
+        color: #aaa;
+        background-color: #f1f1f1;
+        font-weight: bold; }
+        section.page div.page-header ul > li.selected > a:hover {
+          text-decoration: none; }
+    section.page div.page-header ul li {
+      /**
+       * Page actions are a drop down menu for things like deleting or moving a page.
+       */ }
+      section.page div.page-header ul li.actions:hover > ul {
+        display: block; }
+      section.page div.page-header ul li.actions:hover:after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        right: 0;
+        height: 4px;
+        background-color: #f7f7f7;
+        display: block;
+        width: 100%; }
+      section.page div.page-header ul li.actions ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        padding: 4px 0 0;
+        right: 0;
+        text-align: right;
+        z-index: 1; }
+        section.page div.page-header ul li.actions ul li {
+          float: none; }
+  section.page div.page-left {
+    float: left;
+    width: 220px;
+    margin: 18px 30px 0 0;
+    /**
+     * Table of contents for pages. This is generated by media wiki so has lame
+     * identifiers and class names.
+     */ }
+    section.page div.page-left + .page-main {
+      width: 700px;
+      margin: 0 0 0 250px; }
+    section.page div.page-left table#toc div#toctitle {
+      padding: 4px; }
+      section.page div.page-left table#toc div#toctitle h2 {
+        display: inline;
+        font-weight: normal;
+        font-size: 1.2em;
+        border: 0; }
+      section.page div.page-left table#toc div#toctitle span.toctoggle {
+        display: none; }
+      section.page div.page-left table#toc div#toctitle + ul {
+        padding: 0; }
+    section.page div.page-left table#toc ul {
+      list-style: none;
+      margin: 4px;
+      font-size: 0.95em;
+      padding: 0 0 0 16px; }
+  section.page div.page-main {
+    width: 960px;
+    font-size: 0.95em;
+    /**
+     * Headings are what separate each section. Much like a standard wiki we'll have the main
+     * and sub-headings have an underline, each other heading will just be larger text.
+     */
+    /**
+     * Main body paragraphs.
+     */
+    /**
+     * Main body lists.
+     */
+    /**
+     * User preferences table of contents.
+     */
+    /**
+     * Fieldsets are used for things like prefences. This makes them look sexy.
+     */
+    /**
+     * Remember me text.
+     */
+    /**
+     * Syntax highlighting
+     */ }
+    section.page div.page-main h1, section.page div.page-main h2, section.page div.page-main h3, section.page div.page-main h4, section.page div.page-main h5, section.page div.page-main h6 {
+      position: relative;
+      border-bottom: 1px solid #ddd;
+      font-weight: normal;
+      font-size: 2em;
+      padding: 0 0 12px;
+      margin: 18px 0;
+      /**
+       * Editing a section on the wiki.
+       */ }
+      section.page div.page-main h1 > span.editsection, section.page div.page-main h2 > span.editsection, section.page div.page-main h3 > span.editsection, section.page div.page-main h4 > span.editsection, section.page div.page-main h5 > span.editsection, section.page div.page-main h6 > span.editsection {
+        position: absolute;
+        bottom: 5px;
+        right: 0;
+        font-size: 12px; }
+    section.page div.page-main h2 {
+      font-size: 1.7em; }
+    section.page div.page-main h3 {
+      font-size: 1.5em; }
+    section.page div.page-main h4 {
+      font-size: 1.3em; }
+    section.page div.page-main h5 {
+      font-size: 1.1em; }
+    section.page div.page-main h6 {
+      font-size: 1em; }
+    section.page div.page-main h3, section.page div.page-main h4, section.page div.page-main h5, section.page div.page-main h6 {
+      border: 0;
+      padding: 0; }
+    section.page div.page-main p {
+      margin: 18px 0; }
+    section.page div.page-main > #mw-content-text > ul, section.page div.page-main > #mw-content-text > ol {
+      line-height: 0.8em;
+      padding: 0 0 0 30px;
+      margin: 16px 0; }
+      section.page div.page-main > #mw-content-text > ul li, section.page div.page-main > #mw-content-text > ol li {
+        margin: 3px 0; }
+    section.page div.page-main #preftoc {
+      list-style: none;
+      float: right;
+      margin: 0 0 18px; }
+      section.page div.page-main #preftoc > li {
+        float: left;
+        position: relative;
+        margin: 0 0 0 5px; }
+        section.page div.page-main #preftoc > li > a, section.page div.page-main #preftoc > li span {
+          border-radius: 2px 2px 2px 2px;
+          -moz-border-radius: 2px 2px 2px 2px;
+          -webkit-border-radius: 2px 2px 2px 2px;
+          background-color: #f7f7f7;
+          display: block;
+          font-size: 0.8em;
+          padding: 3px 5px;
+          color: #777; }
+          section.page div.page-main #preftoc > li > a:hover, section.page div.page-main #preftoc > li > a:focus, section.page div.page-main #preftoc > li span:hover, section.page div.page-main #preftoc > li span:focus {
+            text-decoration: none;
+            background-color: #f1f1f1; }
+        section.page div.page-main #preftoc > li.selected > a {
+          color: #aaa;
+          background-color: #f1f1f1;
+          font-weight: bold; }
+          section.page div.page-main #preftoc > li.selected > a:hover {
+            text-decoration: none; }
+    section.page div.page-main fieldset {
+      clear: both;
+      border-radius: 2px 2px 2px 2px;
+      -moz-border-radius: 2px 2px 2px 2px;
+      -webkit-border-radius: 2px 2px 2px 2px;
+      border: 1px solid #ddd;
+      margin: 18px 0; }
+      section.page div.page-main fieldset > legend {
+        background-color: #fff;
+        padding: 2px 6px;
+        color: #444; }
+      section.page div.page-main fieldset table {
+        width: 100%; }
+    section.page div.page-main .mw-label {
+      padding: 16px 8px;
+      font-weight: bold;
+      vertical-align: top;
+      width: 160px; }
+    section.page div.page-main .mw-input {
+      padding: 8px; }
+    section.page div.page-main td.htmlform-top {
+      padding: 8px; }
+    section.page div.page-main td.htmlform-tip, section.page div.page-main .prefsectiontip {
+      font-size: 0.9em;
+      font-style: italic; }
+    section.page div.page-main .prefsectiontip p {
+      margin: 6px 0 !important; }
+    section.page div.page-main #editform > textarea {
+      width: 100%;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box; }
+    section.page div.page-main label[for="wpRemember"] {
+      font-size: 0.9em;
+      padding: 0 0 0 6px; }
+    section.page div.page-main div.mw-geshi {
+      border: 1px solid #f1f1f1;
+      padding: 6px;
+      font-size: 0.9em;
+      background-color: #f9f9f9; }
+
+footer {
+  clear: both;
+  background-color: #4C4C4C;
+  padding: 10px 0;
+  font-size: 0.7em;
+  color: #fff; }
+  footer p {
+    margin: 6px 0; }
+
+/**
+ * Input buttons and submit boxes.
+ */
+input, textarea, select, button {
+  border-radius: 2px 2px 2px 2px;
+  -moz-border-radius: 2px 2px 2px 2px;
+  -webkit-border-radius: 2px 2px 2px 2px;
+  border: 1px solid #ccc;
+  padding: 6px 4px;
+  box-shadow: inset 0 1px 1px #e2e2e2;
+  color: #444;
+  margin: 4px 0; }
+
+input[type="submit"] {
+  background: #f36b5b;
+  background: -moz-linear-gradient(top, #f36b5b 0%, #f0523f 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f36b5b), color-stop(100%, #f0523f));
+  background: -webkit-linear-gradient(top, #f36b5b 0%, #f0523f 100%);
+  background: -o-linear-gradient(top, #f36b5b 0%, #f0523f 100%);
+  background: -ms-linear-gradient(top, #f36b5b 0%, #f0523f 100%);
+  background: linear-gradient(to bottom, #f36b5b 0%, #f0523f 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f36b5b', endColorstr='#f0523f', GradientType=0);
+  border-color: #e04b39;
+  color: #fff;
+  box-shadow: inset 0 1px 1px #f57e6f;
+  padding: 6px 12px; }
+
+/**
+ * Success, error, and warning boxes.
+ */
+.successbox, .warningbox, .errorbox {
+  width: 100%;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  margin: 18px 0;
+  border-width: 1px;
+  border-radius: 2px 2px 2px 2px;
+  -moz-border-radius: 2px 2px 2px 2px;
+  -webkit-border-radius: 2px 2px 2px 2px; }
+  .successbox p, .warningbox p, .errorbox p {
+    margin: 0 !important; }
+
+.successbox {
+  border-color: #D6E9C6;
+  background-color: #DFF0D8;
+  color: #468847; }
+
+.warningbox {
+  border-color: #FBEED5;
+  background-color: #FCF8E3;
+  color: #C09853; }
+
+.errorbox {
+  border-color: #EED3D7;
+  background-color: #F2DEDE;
+  color: #B94A48; }
+
+/**
+ * Horizontal Rule
+ */
+hr {
+  border: 0;
+  background-color: #ddd;
+  height: 2px; }
