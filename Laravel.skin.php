@@ -41,7 +41,7 @@ class LaravelTemplate extends BaseTemplate {
 
         <div class="search-box">
         	<form action="<?php $this->text( 'wgScript' ); ?>" id="searchform" class="mw-search">
-        		<?php echo $this->makeSearchInput(array('placeholder' => 'Search...') ); ?><button type="submit"><i class="icon-search"></i></button>
+        		<?php echo $this->makeSearchInput(array('placeholder' => 'Search...', 'id' => 'searchInput') ); ?><button type="submit"><i class="icon-search"></i></button>
         	</form>
         </div>
     </div>
@@ -124,11 +124,18 @@ class LaravelTemplate extends BaseTemplate {
 </header>
 
 <section class="page contain">
-        	
+	
+	<?php if ($this->data['newtalk']): ?>
+	<div class="warningbox">
+		<?php $this->html('newtalk'); ?>        	
+	</div>
+	<?php endif; ?>
+
 	<div class="page-header group">
 		<ul>
 
 <?php
+
 	$headerLinks = $this->data['content_navigation']['namespaces'] + $this->data['content_navigation']['views'];
 
 	// If the "view" link is available we'll unset it as it's the same as the page link.

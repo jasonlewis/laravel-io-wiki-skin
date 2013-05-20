@@ -198,7 +198,7 @@ header {
               -webkit-border-radius: 0 0 2px 2px; }
 
 section.page {
-  padding: 16px 0 48px;
+  padding: 0 0 48px;
   /**
    * The page header contains links for editing, discussing, and other administration tools.
    */ }
@@ -481,3 +481,21 @@ hr {
   border: 0;
   background-color: #ddd;
   height: 2px; }
+
+/**
+ * Search box suggestions.
+ */
+div.suggestions {
+  border: 0 !important; }
+  div.suggestions .suggestions-results, div.suggestions .suggestions-result, div.suggestions .suggestions-special {
+    background-color: #444;
+    color: #fff !important;
+    border: 0; }
+    div.suggestions .suggestions-results .special-query, div.suggestions .suggestions-result .special-query, div.suggestions .suggestions-special .special-query {
+      color: #fff !important; }
+  div.suggestions .suggestions-special {
+    border-radius: 0 0 2px 2px;
+    -moz-border-radius: 0 0 2px 2px;
+    -webkit-border-radius: 0 0 2px 2px; }
+  div.suggestions .suggestions-result-current {
+    background-color: #393939; }

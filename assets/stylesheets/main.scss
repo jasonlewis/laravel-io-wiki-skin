@@ -294,7 +294,7 @@ header {
 }
 
 section.page {
-	padding: 16px 0 48px;
+	padding: 0 0 48px;
 
 	/**
 	 * The page header contains links for editing, discussing, and other administration tools.
@@ -603,4 +603,27 @@ hr {
 	border: 0;
 	background-color: #ddd;
 	height: 2px;
+}
+
+/**
+ * Search box suggestions.
+ */
+div.suggestions {
+	border: 0 !important;
+
+	.suggestions-results, .suggestions-result, .suggestions-special {
+		background-color: #444;
+		color: #fff !important;
+		border: 0;
+
+		.special-query { color: #fff !important; }
+	}
+
+	.suggestions-special {
+		@include border-radius(0, 0, 2px, 2px);
+	}
+
+	.suggestions-result-current {
+		background-color: #393939;
+	}
 }
