@@ -202,58 +202,60 @@ section.page {
   /**
    * The page header contains links for editing, discussing, and other administration tools.
    */ }
-  section.page div.page-header ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    float: right; }
-    section.page div.page-header ul > li {
-      float: left;
-      position: relative;
-      margin: 0 0 0 5px; }
-      section.page div.page-header ul > li > a, section.page div.page-header ul > li span {
-        border-radius: 2px 2px 2px 2px;
-        -moz-border-radius: 2px 2px 2px 2px;
-        -webkit-border-radius: 2px 2px 2px 2px;
-        background-color: #f7f7f7;
-        display: block;
-        font-size: 0.8em;
-        padding: 3px 5px;
-        color: #777; }
-        section.page div.page-header ul > li > a:hover, section.page div.page-header ul > li > a:focus, section.page div.page-header ul > li span:hover, section.page div.page-header ul > li span:focus {
-          text-decoration: none;
-          background-color: #f1f1f1; }
-      section.page div.page-header ul > li.selected > a {
-        color: #aaa;
-        background-color: #f1f1f1;
-        font-weight: bold; }
-        section.page div.page-header ul > li.selected > a:hover {
-          text-decoration: none; }
-    section.page div.page-header ul li {
-      /**
-       * Page actions are a drop down menu for things like deleting or moving a page.
-       */ }
-      section.page div.page-header ul li.actions:hover > ul {
-        display: block; }
-      section.page div.page-header ul li.actions:hover:after {
-        content: "";
-        position: absolute;
-        top: 100%;
-        right: 0;
-        height: 4px;
-        background-color: #f7f7f7;
-        display: block;
-        width: 100%; }
-      section.page div.page-header ul li.actions ul {
-        display: none;
-        position: absolute;
-        top: 100%;
-        padding: 4px 0 0;
-        right: 0;
-        text-align: right;
-        z-index: 1; }
-        section.page div.page-header ul li.actions ul li {
-          float: none; }
+  section.page div.page-header {
+    margin: 18px 0; }
+    section.page div.page-header ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      float: right; }
+      section.page div.page-header ul > li {
+        float: left;
+        position: relative;
+        margin: 0 0 0 5px; }
+        section.page div.page-header ul > li > a, section.page div.page-header ul > li span {
+          border-radius: 2px 2px 2px 2px;
+          -moz-border-radius: 2px 2px 2px 2px;
+          -webkit-border-radius: 2px 2px 2px 2px;
+          background-color: #f7f7f7;
+          display: block;
+          font-size: 0.8em;
+          padding: 3px 5px;
+          color: #777; }
+          section.page div.page-header ul > li > a:hover, section.page div.page-header ul > li > a:focus, section.page div.page-header ul > li span:hover, section.page div.page-header ul > li span:focus {
+            text-decoration: none;
+            background-color: #f1f1f1; }
+        section.page div.page-header ul > li.selected > a {
+          color: #aaa;
+          background-color: #f1f1f1;
+          font-weight: bold; }
+          section.page div.page-header ul > li.selected > a:hover {
+            text-decoration: none; }
+      section.page div.page-header ul li {
+        /**
+         * Page actions are a drop down menu for things like deleting or moving a page.
+         */ }
+        section.page div.page-header ul li.actions:hover > ul {
+          display: block; }
+        section.page div.page-header ul li.actions:hover:after {
+          content: "";
+          position: absolute;
+          top: 100%;
+          right: 0;
+          height: 4px;
+          background-color: #f7f7f7;
+          display: block;
+          width: 100%; }
+        section.page div.page-header ul li.actions ul {
+          display: none;
+          position: absolute;
+          top: 100%;
+          padding: 4px 0 0;
+          right: 0;
+          text-align: right;
+          z-index: 1; }
+          section.page div.page-header ul li.actions ul li {
+            float: none; }
   section.page div.page-left {
     float: left;
     width: 220px;
