@@ -193,11 +193,30 @@ class LaravelTemplate extends BaseTemplate {
 
 <script src="<?php echo $this->getSkin()->getSkinStylePath('assets/javascripts/sticky.js'); ?>"></script>
 <script>
+	var positionFooter = function()
+	{
+		var windowHeight = $(window).height(),
+			offsetTop = $('footer').offset().top + $('footer').outerHeight();
+
+		var difference = windowHeight - offsetTop;
+
+		if (difference <= 0)
+		{
+			return;
+		}
+
+		$('footer').css('margin-top', difference + 'px');
+	};
+
 	$(document).ready(function(){
 		$('#toc').wrap('<div class="page-left" />');
 
 		$('.page-left').insertBefore('.page-main').sticky();
+
+		positionFooter();
 	});
+
+	$(window).resize(positionFooter);
 </script>
 
 </body>
