@@ -75,11 +75,12 @@ a {
 
 	&.external:after {
 		position: absolute;
+		right: 3px;
+		top: -3px;
 		font-family: 'FontAwesome';
 		content: "\f08e";
 		font-style: normal;
 		font-size: 11px;
-		padding: 1px 2px 0 6px;
 		color: #999;
 		font-weight: normal;
 	}
