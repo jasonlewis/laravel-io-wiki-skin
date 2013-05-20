@@ -337,7 +337,7 @@ section.page {
     section.page div.page-main p {
       margin: 18px 0; }
     section.page div.page-main > #mw-content-text > ul, section.page div.page-main > #mw-content-text > ol {
-      line-height: 0.8em;
+      line-height: 1.2em;
       padding: 0 0 0 30px;
       margin: 16px 0; }
       section.page div.page-main > #mw-content-text > ul li, section.page div.page-main > #mw-content-text > ol li {
