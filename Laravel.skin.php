@@ -170,6 +170,8 @@ class LaravelTemplate extends BaseTemplate {
     	<?php $this->html('bodytext') ?>
 
     	<div class="group"><?php $this->html('catlinks'); ?></div>
+
+    	<?php $this->html('dataAfterContent'); ?>
     </div>
 
 </section>
