@@ -112,7 +112,7 @@ class LaravelTemplate extends BaseTemplate {
 			<?php else: ?>
 
 			<li class="highlighted">
-				<a href="<?php echo $this->data['personal_urls']['createaccount']['href']; ?>">Create Account</a>
+				<?php echo Linker::link(Title::newFromText('Special:RequestAccount'), 'Request Account'); ?>
 			</li>
 			<li class="highlighted">
 				<a href="<?php echo $this->data['personal_urls']['anonlogin']['href']; ?>">Sign in</a>
