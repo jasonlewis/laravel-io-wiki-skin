@@ -53,7 +53,7 @@ class LaravelTemplate extends BaseTemplate {
 	<nav class="contain">
 		<ul>
 			<li class="menu">
-				<?php echo Linker::link(Title::newFromText('Main Page'), 'Main Page <i class="icon-chevron-down"></i>'); ?>
+				<?php echo Linker::link(Title::newFromText('Laravel.io Wiki'), 'Main Page <i class="icon-chevron-down"></i>'); ?>
 
 				<ul>
 					<li></li>
