@@ -165,11 +165,11 @@ class LaravelTemplate extends BaseTemplate {
 	</div>
 
 	<div class="page-main">
-
 		<h1><?php $this->html('title') ?></h1>
 
-    	<?php $this->html( 'bodytext' ) ?>
+    	<?php $this->html('bodytext') ?>
 
+    	<div class="group"><?php $this->html('catlinks'); ?></div>
     </div>
 
 </section>

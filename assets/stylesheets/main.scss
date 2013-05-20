@@ -523,6 +523,35 @@ section.page {
 			background-color: #f9f9f9;
 		}
 
+		/**
+		 * Page category links.
+		 */
+		#catlinks {
+			color: #fff;
+			padding: 18px 0 0;
+
+			& > #mw-normal-catlinks {
+				& > a {
+					@include border-radius(2px, 2px, 2px, 2px);
+					background-color: #666;
+					float: left;
+					font-size: 0.8em;
+					padding: 5px;
+					color: #fff;
+					line-height: 1.25em;
+					font-weight: bold;
+
+					&:hover, &:focus {
+						text-decoration: none;
+						background-color: #555;
+					}
+				}
+			}
+
+			ul {
+				@include horizontal-gray-list;
+			}
+		}
 
 	}
 }

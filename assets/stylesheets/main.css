@@ -307,6 +307,9 @@ section.page {
      */
     /**
      * Syntax highlighting
+     */
+    /**
+     * Page category links.
      */ }
     section.page div.page-main h1, section.page div.page-main h2, section.page div.page-main h3, section.page div.page-main h4, section.page div.page-main h5, section.page div.page-main h6 {
       position: relative;
@@ -409,6 +412,45 @@ section.page {
       padding: 6px;
       font-size: 0.9em;
       background-color: #f9f9f9; }
+    section.page div.page-main #catlinks {
+      color: #fff;
+      padding: 18px 0 0; }
+      section.page div.page-main #catlinks > #mw-normal-catlinks > a {
+        border-radius: 2px 2px 2px 2px;
+        -moz-border-radius: 2px 2px 2px 2px;
+        -webkit-border-radius: 2px 2px 2px 2px;
+        background-color: #666;
+        float: left;
+        font-size: 0.8em;
+        padding: 5px;
+        color: #fff;
+        line-height: 1.25em;
+        font-weight: bold; }
+        section.page div.page-main #catlinks > #mw-normal-catlinks > a:hover, section.page div.page-main #catlinks > #mw-normal-catlinks > a:focus {
+          text-decoration: none;
+          background-color: #555; }
+      section.page div.page-main #catlinks ul > li {
+        float: left;
+        position: relative;
+        margin: 0 0 0 5px; }
+        section.page div.page-main #catlinks ul > li > a, section.page div.page-main #catlinks ul > li span {
+          border-radius: 2px 2px 2px 2px;
+          -moz-border-radius: 2px 2px 2px 2px;
+          -webkit-border-radius: 2px 2px 2px 2px;
+          background-color: #f7f7f7;
+          display: block;
+          font-size: 0.8em;
+          padding: 3px 5px;
+          color: #777; }
+          section.page div.page-main #catlinks ul > li > a:hover, section.page div.page-main #catlinks ul > li > a:focus, section.page div.page-main #catlinks ul > li span:hover, section.page div.page-main #catlinks ul > li span:focus {
+            text-decoration: none;
+            background-color: #f1f1f1; }
+        section.page div.page-main #catlinks ul > li.selected > a {
+          color: #aaa;
+          background-color: #f1f1f1;
+          font-weight: bold; }
+          section.page div.page-main #catlinks ul > li.selected > a:hover {
+            text-decoration: none; }
 
 footer {
   clear: both;
