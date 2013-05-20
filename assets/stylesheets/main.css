@@ -387,7 +387,7 @@ section.page {
       section.page div.page-main fieldset table {
         width: 100%; }
     section.page div.page-main .mw-label {
-      padding: 16px 8px;
+      padding: 12px 8px;
       font-weight: bold;
       vertical-align: top;
       width: 160px; }
@@ -469,10 +469,10 @@ input, textarea, select, button {
   -moz-border-radius: 2px 2px 2px 2px;
   -webkit-border-radius: 2px 2px 2px 2px;
   border: 1px solid #ccc;
-  padding: 6px 4px;
+  padding: 4px;
   box-shadow: inset 0 1px 1px #e2e2e2;
   color: #444;
-  margin: 4px 0; }
+  margin: 3px 0; }
 
 input[type="submit"] {
   background: #f36b5b;
