@@ -9,3 +9,9 @@ Clone this repository to your `skins` directory and add the following line to yo
     require_once($IP.'/skins/laravel-io-wiki-skin/laravel.php');
 
 Now find the `$wgDefaultSkin` variable and set it to `laravel-io-wiki-skin`.
+
+## License
+
+Copyright 2013 Jason Lewis.
+
+Released under the 2-clause BSD license.
