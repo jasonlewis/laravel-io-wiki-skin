@@ -137,7 +137,8 @@ header {
       bottom: 0;
       left: 0;
       padding: 0;
-      margin: 0; }
+      margin: 0;
+      width: 100%; }
       header nav > ul > li {
         float: left;
         margin: 0 0 0 0;
@@ -161,16 +162,21 @@ header {
             margin: 0 0 0 6px;
             position: relative;
             top: -1px; }
-        header nav > ul > li:first-child {
+        header nav > ul > li:first-child, header nav > ul > li.request-account {
           border-radius: 2px 0 0 0;
           -moz-border-radius: 2px 0 0 0;
           -webkit-border-radius: 2px 0 0 0; }
-        header nav > ul > li:last-child {
+        header nav > ul > li.toolbox, header nav > ul > li.login {
           border-radius: 0 2px 0 0;
           -moz-border-radius: 0 2px 0 0;
           -webkit-border-radius: 0 2px 0 0; }
-        header nav > ul > li.highlighted {
-          font-weight: bold; }
+        header nav > ul > li.right.user {
+          font-weight: bold;
+          border-radius: 2px 2px 0 0;
+          -moz-border-radius: 2px 2px 0 0;
+          -webkit-border-radius: 2px 2px 0 0; }
+        header nav > ul > li.right {
+          float: right; }
         header nav > ul > li:hover {
           background-color: #eb4a36; }
           header nav > ul > li:hover.menu ul {

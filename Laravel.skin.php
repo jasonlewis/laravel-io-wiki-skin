@@ -81,7 +81,7 @@ class LaravelTemplate extends BaseTemplate {
 			<li>
 				<?php echo Linker::link(Title::newFromText('Laracon')); ?>
 			</li>
-			<li class="menu">
+			<li class="menu toolbox">
 				<span>Toolbox <i class="icon-chevron-down"></i></span>
 
 				<ul>
@@ -96,7 +96,7 @@ class LaravelTemplate extends BaseTemplate {
 			</li>
 
 			<?php if ($wgUser->isLoggedIn()): ?>
-			<li class="menu highlighted">
+			<li class="menu user right">
 				<?php $personalTools = $this->getPersonalTools(); $talk = array_shift($personalTools); ?>
 
 				<a href="<?php echo $talk['links'][0]['href']; ?>"><?php echo $wgUser->getName(); ?> <i class="icon-chevron-down"></i></a>
@@ -111,10 +111,7 @@ class LaravelTemplate extends BaseTemplate {
 			</li>
 			<?php else: ?>
 
-			<li>
-				<?php echo Linker::link(Title::newFromText('Special:RequestAccount'), 'Request Account'); ?>
-			</li>
-			<li>
+			<li class="right login">
 				<?php if (isset($this->data['personal_urls']['anonlogin'])): ?>
 					<a href="<?php echo $this->data['personal_urls']['anonlogin']['href']; ?>">Sign In</a>
 				<?php elseif (isset($this->data['personal_urls']['login'])): ?>
@@ -122,6 +119,9 @@ class LaravelTemplate extends BaseTemplate {
 				<?php else: ?>
 					<?php echo Linker::link(Title::newFromText('Special:UserLogin'), 'Sign In'); ?>
 				<?php endif; ?>
+			</li>
+			<li class="right request-account">
+				<?php echo Linker::link(Title::newFromText('Special:RequestAccount'), 'Request Account'); ?>
 			</li>
 
 			<?php endif; ?>
