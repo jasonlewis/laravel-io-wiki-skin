@@ -344,6 +344,10 @@ section.page {
     section.page div.page-main h4, section.page div.page-main h5, section.page div.page-main h6 {
       border: 0;
       padding: 0; }
+    section.page div.page-main div.page-subtitle {
+      font-size: 0.8em;
+      font-style: italic;
+      margin: -12px 0 18px; }
     section.page div.page-main p {
       margin: 18px 0; }
     section.page div.page-main > #mw-content-text > ul, section.page div.page-main > #mw-content-text > ol {

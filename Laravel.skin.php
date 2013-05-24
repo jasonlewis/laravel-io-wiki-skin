@@ -172,6 +172,7 @@ class LaravelTemplate extends BaseTemplate {
 
 	<div class="page-main">
 		<h1 class="page-title"><?php $this->html('title') ?></h1>
+		<div class="page-subtitle"><?php if ($this->data['subtitle']) $this->html('subtitle'); ?></div>
 
     	<?php $this->html('bodytext') ?>
 
