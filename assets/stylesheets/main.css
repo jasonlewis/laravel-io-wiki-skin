@@ -30,7 +30,7 @@ a {
   a.external:after {
     position: absolute;
     right: 3px;
-    top: -3px;
+    top: 0;
     font-family: 'FontAwesome';
     content: "\f08e";
     font-style: normal;
