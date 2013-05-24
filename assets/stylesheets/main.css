@@ -361,7 +361,7 @@ section.page {
       padding: 0 0 0 30px;
       margin: 16px 0; }
       section.page div.page-main > #mw-content-text > ul li, section.page div.page-main > #mw-content-text > ol li {
-        margin: 3px 0; }
+        margin: 4px 0; }
     section.page div.page-main #preftoc {
       list-style: none;
       float: right;
