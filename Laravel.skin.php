@@ -57,6 +57,8 @@ class LaravelTemplate extends BaseTemplate {
 
 				<ul>
 					<li></li>
+					<li><?php echo Linker::link(Title::newFromText('Built with Laravel'), 'Built with Laravel'); ?></li>
+					<li><?php echo Linker::link(Title::newFromText('Meetups'), 'Meetups'); ?></li>
 					<li><?php echo Linker::link(Title::newFromText('Special:RecentChanges'), 'Recent Changes'); ?></li>
 					<li><?php echo Linker::link(Title::newFromText('Special:Help'), 'Help'); ?></li>
 				</ul>
